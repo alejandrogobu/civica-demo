@@ -23,6 +23,7 @@ renamed_casted AS (
         , O.estimated_delivery_at AS estimated_delivery_at_utc
         , O.delivered_at AS delivered_at_utc
         , O.status AS status_order
+        , O._fivetran_synced as date_load
     FROM src_orders O
     LEFT JOIN stg_promos P
         ON O.promo_id = P.name_promo

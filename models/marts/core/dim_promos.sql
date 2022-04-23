@@ -9,6 +9,7 @@ renamed_casted AS (
         , name_promo
         , total_discount_usd
         , status_promo
+        , date_load
     FROM stg_promos
     )
 

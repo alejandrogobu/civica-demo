@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_budget_products
     description: >
-      Data about budget in Greenery.
+      Data about budget in demo.
     columns:
       - name: _row
         description: >
@@ -28,5 +28,10 @@ models:
       - name: month
         description: >
           Each month for the budget -> End of the month..
+        tests:
+          - not_null
+      - name: date_load
+        description: >
+          Date that the data was loaded.
         tests:
           - not_null

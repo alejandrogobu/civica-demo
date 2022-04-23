@@ -9,6 +9,7 @@ renamed_casted AS (
     , promo_id AS name_promo
     , discount AS total_discount_usd
     , status AS status_promo
+    , _fivetran_synced AS date_load
     FROM src_promos
     )
 

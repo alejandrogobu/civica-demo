@@ -13,6 +13,7 @@ renamed_casted AS (
     , created_at AS created_at_utc
     , updated_at AS updated_at_utc
     , address_id
+    , _fivetran_synced AS date_load
     FROM src_users
     )
 

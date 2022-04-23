@@ -9,6 +9,7 @@ renamed_casted AS (
         , product_name
         , unit_price_usd
         , inventory
+        , date_load
     FROM stg_products
     )
 

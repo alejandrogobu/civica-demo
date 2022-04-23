@@ -4,7 +4,7 @@ sources:
 
   - name: google_sheets # name of the source 
     description: >
-      Raw data Greenery from PostgreSQL Database.
+      Raw data demo from PostgreSQL Database.
     schema: google_sheets # this is the schema our raw data lives in
     database: fivetran_database # this is the name of our database
 
@@ -22,7 +22,7 @@ sources:
       - name: budget
         loaded_at_field: _fivetran_synced
         description: >
-          Data about budget in Greenery.
+          Data about budget in demo.
         columns:
           - name: _row
             description: >
@@ -46,3 +46,10 @@ sources:
               Each month for the budget -> End of the month.
             tests:
               - not_null
+          - name: _fivetran_synced
+            description: >
+              Date that the data was loaded.
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: timestamp_tz 

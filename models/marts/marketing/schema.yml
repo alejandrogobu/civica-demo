@@ -3,11 +3,11 @@ version: 2
 models:
   - name: agg_users_orders
     description: >
-      All info for each user in Greneery and the orders related with the users.
+      All info for each user in demo and the orders related with the users.
     columns:
       - name: user_id
         description: >
-          Data about all users in Greenery.
+          Data about all users in demo.
         tests:
           - not_null
           - unique
