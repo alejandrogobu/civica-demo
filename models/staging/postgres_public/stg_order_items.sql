@@ -1,6 +1,6 @@
 WITH src_order_items AS (
     SELECT * 
-    FROM {{ source('postgres', 'order_items') }}
+    FROM {{ source('postgres_public', 'order_items') }}
     ),
 
 renamed_casted AS (

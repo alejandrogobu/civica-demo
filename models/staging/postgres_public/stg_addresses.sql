@@ -1,6 +1,6 @@
 WITH src_addresses AS (
     SELECT * 
-    FROM {{ source('postgres', 'addresses') }}
+    FROM {{ source('postgres_public', 'addresses') }}
     ),
 
 renamed_casted AS (

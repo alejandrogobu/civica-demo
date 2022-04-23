@@ -1,6 +1,6 @@
 WITH src_events AS (
     SELECT * 
-    FROM {{ source('postgres', 'events') }}
+    FROM {{ source('postgres_events', 'events') }}
     ),
 
 renamed_casted AS (

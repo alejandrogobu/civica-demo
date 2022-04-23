@@ -1,6 +1,6 @@
 WITH src_products AS (
     SELECT * 
-    FROM {{ source('postgres', 'products') }}
+    FROM {{ source('postgres_public', 'products') }}
     ),
 
 renamed_casted AS (
