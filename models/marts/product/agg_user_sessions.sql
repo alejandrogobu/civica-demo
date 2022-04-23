@@ -39,9 +39,9 @@ fact_user_sessions AS (
         ,i.package_shipped
         ,s.first_event_time
         ,s.last_event_time
-        ,(DATE_PART('DAY', s.last_event_time::timestamp - s.first_event_time::timestamp) * 24 +
-        DATE_PART('HOUR', s.last_event_time::timestamp - s.first_event_time::timestamp)) * 60 +
-        DATE_PART('MINUTE', S.last_event_time::timestamp - s.first_event_time::timestamp) AS session_length_minutes
+        ,(DATEDIFF(DAY, s.first_event_time::timestamp, s.last_event_time::timestamp) * 24 +
+        DATEDIFF(HOUR, s.first_event_time::timestamp, s.last_event_time::timestamp)) * 60 +
+        DATEDIFF(MINUTE, s.first_event_time::timestamp, s.last_event_time::timestamp) AS session_length_minutes
 
     FROM int_session_events_agg I
     LEFT JOIN dim_users U ON i.user_id = u.user_id

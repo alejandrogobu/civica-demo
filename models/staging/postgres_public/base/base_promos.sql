@@ -1,6 +1,6 @@
 WITH src_promos AS (
     SELECT * 
-    FROM {{ source('postgres', 'promos') }}
+    FROM {{ source('postgres_public', 'promos') }}
     ),
 
 renamed_casted AS (

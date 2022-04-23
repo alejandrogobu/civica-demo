@@ -1,6 +1,6 @@
 WITH src_users AS (
     SELECT * 
-    FROM {{ source('postgres', 'users') }}
+    FROM {{ source('postgres_public', 'users') }}
     ),
 
 renamed_casted AS (
