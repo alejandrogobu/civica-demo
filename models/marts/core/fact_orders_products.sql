@@ -18,6 +18,7 @@ renamed_casted AS (
         , O.created_at_utc
         , OI.quantity
         , O.status_order
+        , O.date_load
     FROM stg_orders O
     LEFT JOIN stg_order_items OI
       ON O.order_id = OI.order_id

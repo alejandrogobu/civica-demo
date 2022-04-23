@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 WITH base_orders AS (
     SELECT * 
     FROM {{ ref('stg_orders') }}
@@ -19,7 +25,15 @@ renamed_casted AS (
         , estimated_delivery_at_utc
         , delivered_at_utc
         , status_order
+        , date_load
     FROM base_orders
     )
 
 SELECT * FROM renamed_casted
+
+{% if is_incremental() %}
+
+  -- this filter will only be applied on an incremental run
+  where date_load > (select max(date_load) from {{ this }})
+
+{% endif %}

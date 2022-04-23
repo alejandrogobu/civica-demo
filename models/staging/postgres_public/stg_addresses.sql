@@ -10,6 +10,7 @@ renamed_casted AS (
         , zipcode
         , state
         , country
+        , _fivetran_synced AS date_load
     FROM src_addresses
     )
 

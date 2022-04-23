@@ -4,7 +4,7 @@ sources:
 
   - name: postgres_public # name of the source 
     description: >
-      Raw data Greenery from PostgreSQL Database.
+      Raw data demo from PostgreSQL Database.
     schema: postgres_public # this is the schema our raw data lives in
     database: fivetran_database # this is the name of our database
 
@@ -50,11 +50,18 @@ sources:
               Country this delivery address is based in.
             tests:
               - not_null
+          - name: _fivetran_synced
+            description: >
+              Date that the data was loaded.
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: timestamp_tz 
 
       - name: users
         loaded_at_field: _fivetran_synced
         description: >
-          Data about all users in Greenery.
+          Data about all users in demo.
         columns:
           - name: user_id
             description: >
@@ -95,6 +102,13 @@ sources:
               Default delivery address for the user.
             tests:
               - not_null
+          - name: _fivetran_synced
+            description: >
+              Date that the data was loaded.
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: timestamp_tz 
 
       - name: promos
         loaded_at_field: _fivetran_synced
@@ -120,6 +134,13 @@ sources:
               - not_null
               - accepted_values:
                     values: ['inactive','active']
+          - name: _fivetran_synced
+            description: >
+              Date that the data was loaded.
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: timestamp_tz 
               
       - name: products
         loaded_at_field: _fivetran_synced
@@ -150,11 +171,18 @@ sources:
             tests:
               - not_null
               - positive_values
+          - name: _fivetran_synced
+            description: >
+              Date that the data was loaded.
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: timestamp_tz 
 
       - name: orders
         loaded_at_field: _fivetran_synced
         description: >
-          Data about all orders in Greenery.
+          Data about all orders in demo.
         columns:
           - name: order_id
             description: >
@@ -225,6 +253,13 @@ sources:
               - not_null
               - accepted_values:
                     values: ['shipped','preparing','delivered']
+          - name: _fivetran_synced
+            description: >
+              Date that the data was loaded.
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: timestamp_tz 
 
       - name: order_items
         loaded_at_field: _fivetran_synced
@@ -247,3 +282,10 @@ sources:
             tests:
               - not_null
               - positive_values
+          - name: _fivetran_synced
+            description: >
+              Date that the data was loaded.
+            tests:
+              - not_null
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: timestamp_tz 

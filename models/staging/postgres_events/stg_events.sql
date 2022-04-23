@@ -13,6 +13,7 @@ renamed_casted AS (
         , event_type
         , order_id
         , product_id
+        , _fivetran_synced AS date_load
     FROM src_events
     )
 

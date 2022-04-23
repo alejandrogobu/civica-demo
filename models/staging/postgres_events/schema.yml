@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_events
     description: >
-      Data about events in the platform of Greenery.
+      Data about events in the platform of demo.
     columns:
       - name: event_id
         description: >
@@ -53,3 +53,8 @@ models:
           - relationships:
                 to: ref('stg_products')
                 field: product_id
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null

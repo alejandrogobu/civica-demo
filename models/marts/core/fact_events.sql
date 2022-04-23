@@ -13,6 +13,7 @@ renamed_casted AS (
         , event_type
         , order_id
         , product_id
+        , date_load
     FROM stg_events
     )
 

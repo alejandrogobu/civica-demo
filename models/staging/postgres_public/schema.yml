@@ -31,10 +31,15 @@ models:
           Country this delivery address is based in.
         tests:
           - not_null
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: stg_users
     description: >
-      Data about all users in Greenery.
+      Data about all users in demo.
     columns:
       - name: user_id
         description: >
@@ -75,10 +80,15 @@ models:
           Default delivery address for the user.
         tests:
           - not_null
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: stg_promos
     description: >
-      Data about all products in Greenery.
+      Data about all products in demo.
     columns:
       - name: promo_id
         description: >
@@ -105,10 +115,15 @@ models:
           - not_null
           - accepted_values:
                     values: ['inactive','active']
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: stg_products
     description: >
-      Data about all products in Greenery.
+      Data about all products in demo.
     columns:
       - name: product_id
         description: >
@@ -134,10 +149,15 @@ models:
         tests:
           - not_null
           - positive_values
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: stg_orders
     description: >
-      Data about all orders in Greenery.
+      Data about all orders in demo.
     columns:
       - name: order_id
         description: >
@@ -210,6 +230,11 @@ models:
           - not_null
           - accepted_values:
                 values: ['shipped','preparing','delivered']
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: stg_order_items
     description: >
@@ -237,4 +262,8 @@ models:
         tests:
           - not_null
           - positive_values
-
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null

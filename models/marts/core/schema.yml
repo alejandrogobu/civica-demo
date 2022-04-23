@@ -20,10 +20,15 @@ models:
       - name: country
         description: >
           Country this delivery address is based in.
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: dim_users
     description: >
-      Data about all users in Greenery.
+      Data about all users in demo.
     columns:
       - name: user_id
         description: >
@@ -49,10 +54,15 @@ models:
       - name: address_id
         description: >
           Default delivery address for the user.
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: dim_promos
     description: >
-      Data about all products in Greenery.
+      Data about all products in demo.
     columns:
       - name: promo_id
         description: >
@@ -66,10 +76,15 @@ models:
       - name: status_promo
         description: >
           Is the promo code active or disabled.
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: dim_products
     description: >
-      Data about all products in Greenery.
+      Data about all products in demo.
     columns:
       - name: product_id
         description: >
@@ -83,10 +98,15 @@ models:
       - name: inventory
         description: >
           Amount of the inventory we have for this product.
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: fact_orders
     description: >
-      Data about all orders in Greenery.
+      Data about all orders in demo.
     columns:
       - name: order_id
         description: >
@@ -127,10 +147,15 @@ models:
       - name: status_order
         description: >
           Status of the order.
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: fact_events
     description: >
-      Data about events in the platform of Greenery.
+      Data about events in the platform of demo.
     columns:
       - name: event_id
         description: >
@@ -156,6 +181,11 @@ models:
       - name: product_id
         description: >
           If the event is specific to a product.
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null
 
   - name: fact_orders_products
     description: >
@@ -211,5 +241,10 @@ models:
       - name: status_order
         description: >
           Status of the order.
+        tests:
+          - not_null
+      - name: date_load
+        description: >
+          Date that the data was loaded.
         tests:
           - not_null

@@ -30,3 +30,8 @@ models:
           - not_null
           - accepted_values:
                     values: ['inactive','active']
+      - name: date_load
+        description: >
+          Date that the data was loaded.
+        tests:
+          - not_null

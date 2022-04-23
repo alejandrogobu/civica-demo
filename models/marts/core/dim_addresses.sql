@@ -10,6 +10,7 @@ renamed_casted AS (
         , zipcode
         , state
         , country
+        , date_load
     FROM stg_addresses
     )
 

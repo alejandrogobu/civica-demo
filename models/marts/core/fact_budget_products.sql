@@ -8,7 +8,7 @@ renamed_casted AS (
         product_id
         , month
         , quantity
-
+        , date_load
     FROM stg_budget_products
     )
 

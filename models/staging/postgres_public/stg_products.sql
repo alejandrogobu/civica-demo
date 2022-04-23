@@ -9,6 +9,7 @@ renamed_casted AS (
         , name AS product_name
         , price AS unit_price_usd
         , inventory AS inventory
+        , _fivetran_synced AS date_load
         FROM src_products
     )
 
