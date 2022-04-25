@@ -1,6 +1,6 @@
 WITH src_orders AS (
     SELECT * 
-    FROM {{ source('postgres_public', 'orders') }}
+    FROM {{ ref('orders_snapshot') }}
 ),
 
 stg_promos AS (

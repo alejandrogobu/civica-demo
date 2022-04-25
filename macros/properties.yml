@@ -1,0 +1,21 @@
+version: 2
+
+macros:
+  - name: get_column_values
+    description: A macro to get values from a specific column and create a case when using a loop
+    arguments:
+      - name: table
+        type: string
+        description: Table that you want get the colum
+      - name: column
+        type: string
+        description: Name of the column that has the values
+  - name: test_positive_values
+    description: A macro to know if a specific column only has positive values
+    arguments:
+      - name: model
+        type: string
+        description: Model that you want get the colum
+      - name: column_name
+        type: string
+        description: Name of the column that has the values

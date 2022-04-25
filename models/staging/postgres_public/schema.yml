@@ -165,6 +165,9 @@ models:
         tests:
           - not_null
           - unique
+          - relationships:
+                to: ref('stg_order_items')
+                field: order_id 
       - name: user_id
         description: >
           UserId of the user that placed this order.
