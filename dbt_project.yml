@@ -38,10 +38,10 @@ models:
       +materialized: table
       core:
         +schema: core
-        #+post-hook: "grant select on {{ this }} to group reporting"
+        #+post-hook: "grant select on {{ this }} to role reporting"
       marketing:
         +schema: marketing
-        #+post-hook: "grant select on {{ this }} to group marketing"
+        #+post-hook: "grant select on {{ this }} to role marketing"
       product:
         +schema: product
-        #+post-hook: "grant select on {{ this }} to group product"
+        #+post-hook: "grant select on {{ this }} to role product"
