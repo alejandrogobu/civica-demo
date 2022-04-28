@@ -6,7 +6,7 @@ sources:
     description: >
       Raw data demo from PostgreSQL Database.
     schema: postgres_public # this is the schema our raw data lives in
-    database: fivetran_database # this is the name of our database
+    database: fivetran # this is the name of our database
 
     quoting:
       database: false
