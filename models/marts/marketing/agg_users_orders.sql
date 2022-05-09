@@ -1,13 +1,13 @@
 
 WITH fact_orders_products AS (
     SELECT * 
-    FROM {{ ref('fact_orders_products') }}
+    FROM {{ ref('fct_orders_products') }}
     ),
 
 
 fact_orders AS (
     SELECT * 
-    FROM {{ ref('fact_orders') }}
+    FROM {{ ref('fct_orders') }}
     ),
 
 

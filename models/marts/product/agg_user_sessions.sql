@@ -1,7 +1,7 @@
 
 WITH fact_events AS (
     SELECT * 
-    FROM {{ ref('fact_events') }}
+    FROM {{ ref('fct_events') }}
     ),
 
 

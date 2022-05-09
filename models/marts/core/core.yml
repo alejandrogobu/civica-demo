@@ -104,7 +104,7 @@ models:
         tests:
           - not_null
 
-  - name: fact_orders
+  - name: fct_orders
     description: >
       Data about all orders in demo.
     columns:
@@ -153,7 +153,7 @@ models:
         tests:
           - not_null
 
-  - name: fact_events
+  - name: fct_events
     description: >
       Data about events in the platform of demo.
     columns:
@@ -187,7 +187,7 @@ models:
         tests:
           - not_null
 
-  - name: fact_orders_products
+  - name: fct_orders_products
     description: >
       Data about products on each order.
     columns:
