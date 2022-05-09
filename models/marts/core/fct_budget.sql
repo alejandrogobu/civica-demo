@@ -1,6 +1,6 @@
 WITH stg_budget_prodcuts AS (
     SELECT * 
-    FROM {{ ref('stg_budget_products') }}
+    FROM {{ ref('stg_budget') }}
     ),
 
 renamed_casted AS (

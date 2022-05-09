@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_budget_products
+  - name: stg_budget
     description: >
       Data about budget in demo.
     columns:
