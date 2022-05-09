@@ -1,4 +1,4 @@
-WITH stg_budget_prodcuts AS (
+WITH stg_budget AS (
     SELECT * 
     FROM {{ ref('stg_budget') }}
     ),
@@ -9,7 +9,7 @@ renamed_casted AS (
         , month
         , quantity
         , date_load
-    FROM stg_budget_products
+    FROM stg_budget
     )
 
 SELECT * FROM renamed_casted
