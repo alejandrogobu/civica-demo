@@ -1,32 +1,25 @@
-WITH src_orders AS (
+WITH base_orders AS (
     SELECT * 
-    FROM {{ ref('orders_snapshot') }}
-),
-
-stg_promos AS (
-    SELECT * 
-    FROM {{ ref('base_promos') }}
+    FROM {{ ref('base_orders') }}
 ),
 
 renamed_casted AS (
     SELECT
-        O.order_id 
-        , O.user_id 
-        , P.promo_id
-        , O.address_id
-        , O.created_at AS created_at_utc
-        , O.order_cost AS item_order_cost_usd
-        , O.shipping_cost AS shipping_cost_usd
-        , O.order_total AS total_order_cost_usd
-        , O.tracking_id
-        , O.shipping_service
-        , O.estimated_delivery_at AS estimated_delivery_at_utc
-        , O.delivered_at AS delivered_at_utc
-        , O.status AS status_order
-        , O._fivetran_synced as date_load
-    FROM src_orders O
-    LEFT JOIN stg_promos P
-        ON O.promo_id = P.name_promo
+          order_id 
+        , user_id 
+        , promo_id
+        , address_id
+        , created_at AS created_at_utc
+        , order_cost AS item_order_cost_usd
+        , shipping_cost AS shipping_cost_usd
+        , order_total AS total_order_cost_usd
+        , tracking_id
+        , shipping_service
+        , estimated_delivery_at AS estimated_delivery_at_utc
+        , delivered_at AS delivered_at_utc
+        , status AS status_order
+        , _fivetran_synced as date_load
+    FROM base_orders 
     )
 
 SELECT * FROM renamed_casted
