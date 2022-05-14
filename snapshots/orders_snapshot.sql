@@ -2,7 +2,7 @@
 
 {{
     config(
-      target_database='dbt',
+      target_database='dbt_prod',
       target_schema='snapshots',
       unique_key='order_id',
 
