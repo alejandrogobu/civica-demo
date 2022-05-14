@@ -34,14 +34,15 @@ models:
   demo:
     staging:
       +materialized: view
+      +schema: silver
     marts:
       +materialized: table
       core:
-        +schema: core
+        +schema: gold
         #+post-hook: "grant select on {{ this }} to role reporting"
       marketing:
-        +schema: marketing
+        +schema: mart_marketing
         #+post-hook: "grant select on {{ this }} to role marketing"
       product:
-        +schema: product
+        +schema: mart_product
         #+post-hook: "grant select on {{ this }} to role product"
